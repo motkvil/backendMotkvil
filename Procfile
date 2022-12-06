@@ -1,0 +1,1 @@
+web: gunicorn backendMotkvil.wsgi --log-file -
