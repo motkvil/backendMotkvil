@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social',
+    'customuser',
     'rest_framework',
     'rest_framework_simplejwt',
 
@@ -63,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'customuser.CustomUserModel'
 
 ROOT_URLCONF = 'backendMotkvil.urls'
 
