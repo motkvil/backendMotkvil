@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -36,6 +37,8 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social',
-    'customuser',
     'rest_framework',
     'rest_framework_simplejwt',
 
@@ -65,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL = 'customuser.CustomUserModel'
+
 
 ROOT_URLCONF = 'backendMotkvil.urls'
 
@@ -97,6 +99,8 @@ DATABASES = {
         conn_max_age=600
     )
 }
+
+
 
 
 # Password validation
