@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.permissions import (IsAdminUser, IsAuthenticated)
 
 class SocialViewset(APIView):
-    permission_classes = (IsAuthenticated,)
+
     def get(self, request):
 
         try:
