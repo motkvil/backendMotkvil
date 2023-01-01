@@ -66,3 +66,5 @@ class SocialViewset(APIView):
                     "detail": serialized.errors
                 }
             )
+
+            
