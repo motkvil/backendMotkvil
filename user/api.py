@@ -1,11 +1,12 @@
 from .models import CustomUser
 from .serializers import UserSerializer, CustomUserSerializer
 
+from django.contrib.auth.models import User
+
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import (IsAdminUser, IsAuthenticated)
-from django.contrib.auth.models import User
 
 class UserViewset(APIView):
 

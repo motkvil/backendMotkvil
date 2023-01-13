@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social',
     'user',
+    'mypet',
 
     'rest_framework',
     'rest_framework_simplejwt',
