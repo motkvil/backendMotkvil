@@ -100,6 +100,7 @@ class HelloMyPet(APIView):
                     print('ASIGNANDO OWNER', newSuperuser)
 
                     newSuperuser.is_superuser = True
+                    newSuperuser.is_staff = True
                     newSuperuser.save()
 
                     return Response(
