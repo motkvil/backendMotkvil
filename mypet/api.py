@@ -120,3 +120,48 @@ class HelloMyPet(APIView):
                     'detail':'Bad request'
                 }
             )
+
+    def delete(self,request):
+
+        try:
+
+            user = request.user
+
+            if user.id is None:
+
+                return Response(
+                    status=status.HTTP_400_BAD_REQUEST,
+                    data={
+                        'multipass':False,
+                        'detail':'Primero debes iniciar sesión'
+                    }
+                )
+
+            else:
+                        
+                newSuperuser = User.objects.get(id=user.id)
+                print('ELIMINAR OWNER', newSuperuser)
+
+                newSuperuser.is_superuser = False
+                newSuperuser.is_staff = False
+                newSuperuser.save()
+
+                return Response(
+                    status=status.HTTP_200_OK,
+                    data={
+                        'multipass': True,
+                        'detail':'¡Good bye, Owner!'
+                    }
+                )
+        
+        except:
+
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data={
+                    'multipass': False,
+                    'detail':'Bad request'
+                }
+            )
+
+
