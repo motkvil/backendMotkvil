@@ -27,4 +27,5 @@ urlpatterns = [
     path('api/social/',include('social.urls')),
     path('api/user/',include('user.urls')),
     path('api/mypet/',include('mypet.urls')),
+    path('api/service/',include('service.urls')),
 ]

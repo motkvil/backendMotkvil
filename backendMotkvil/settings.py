@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'social',
     'user',
     'mypet',
+    'service',
 
     'rest_framework',
     'rest_framework_simplejwt',
