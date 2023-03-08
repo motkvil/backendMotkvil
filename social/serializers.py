@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import SocialNetwork, ViewsModel,NewsModel
+from .models import SocialNetwork, ViewsModel,NewsModel, VisitModel
 
 
 
@@ -20,5 +20,12 @@ class ViewsSerializer(serializers.ModelSerializer):
         model = ViewsModel
         fields = ('id','title','user','created', 'updated')
         read_only_fields = ('created', 'updated',)
+
+class VisitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VisitModel
+        fields = ('__all__')
+        read_only_fields = ('created', 'updated',)
+
 
 

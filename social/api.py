@@ -1,5 +1,5 @@
-from .models import SocialNetwork, NewsModel, ViewsModel
-from .serializers import SocialSerializer, ViewsSerializer, NewsSerializer
+from .models import SocialNetwork, NewsModel, ViewsModel, VisitModel
+from .serializers import SocialSerializer, ViewsSerializer, NewsSerializer, VisitSerializer
 from user.models import CustomUser
 
 from rest_framework.decorators import APIView
@@ -180,6 +180,67 @@ class ViewsView(APIView):
             return Response(
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+
+class ViewVisit(APIView):
+
+    def get(self,request):
+
+        try:
+
+            data = VisitModel.objects.all()
+            serialized = VisitSerializer(data, many=True)
+            
+
+            return Response(
+                status=status.HTTP_200_OK,
+                data={
+                    'multipass':True,
+                    'data': serialized.data
+                }
+            )
+
+        except:
+
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST
+            )
+    
+    def post(self,req):
+        try:
+
+            print(req.data)
+            data = req.data
+
+            serialized = VisitSerializer(data=data)
+            if serialized.is_valid():
+                    
+                serialized.save()
+
+                return Response(
+                    status=status.HTTP_200_OK,
+                    data={
+                        'multipass':True,
+                        'data': "Zorra"
+                    }
+                )
+            else:
+                return Response(
+                    status=status.HTTP_400_BAD_REQUEST,
+                    data={
+                        'multipass':False,
+                        'data': "Serialized no es valido"
+                    }
+                )
+        except:
+
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+
+
+
 
 
 

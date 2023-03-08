@@ -1,6 +1,7 @@
 from django.db import models
 from user.models import CustomUser
 # Create your models here.
+
 class SocialNetwork(models.Model):
     title = models.CharField(max_length=200)
     link = models.URLField()
@@ -27,5 +28,15 @@ class ViewsModel(models.Model):
 
     def __str__(self):
         return self.title
+
+class VisitModel(models.Model):
+    city = models.CharField(max_length=200)
+    ip = models.CharField(max_length=200)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.city
+    
 
 
