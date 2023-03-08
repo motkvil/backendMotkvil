@@ -209,7 +209,7 @@ class ViewVisit(APIView):
     def post(self,req):
         try:
 
-            print(req.data)
+            print(req.data['ip'])
             data = req.data
 
             serialized = VisitSerializer(data=data)
