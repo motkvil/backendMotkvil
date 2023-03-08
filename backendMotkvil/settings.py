@@ -204,7 +204,9 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "https://motk.onrender.com",
     "https://motk.netlify.app",
+    "https://kittyportman.netlify.app",
     "http://localhost:3000",
+    
 ]
 
 CORS_ALLOW_HEADERS = [

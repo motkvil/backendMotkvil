@@ -41,7 +41,7 @@ class ServiceView(APIView):
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,
                 data={
-                    'multipass': True,
+                    'multipass': False,
                     'data': 'Inicia Sesión'
                 }
             )
