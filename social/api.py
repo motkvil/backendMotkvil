@@ -212,8 +212,21 @@ class ViewVisit(APIView):
             print(req.data['ip'])
             data = req.data
 
+            
+
             serialized = VisitSerializer(data=data)
             if serialized.is_valid():
+
+                new = data['ip']
+                current = VisitModel.objects.all()
+                print(current)
+
+                for item in current:
+                    print(item.ip)
+                    if item.ip == new:
+                        print("Borrando registro duplicado")
+                        item.delete()
+                
                     
                 serialized.save()
 
@@ -221,7 +234,7 @@ class ViewVisit(APIView):
                     status=status.HTTP_200_OK,
                     data={
                         'multipass':True,
-                        'data': "Zorra"
+                        'data': "I got you!"
                     }
                 )
             else:
