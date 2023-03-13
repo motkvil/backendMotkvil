@@ -205,7 +205,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://motk.onrender.com",
     "https://motk.netlify.app",
     "https://kittyportman.netlify.app",
-    "https://motkdev.netlify.app/",
+    "https://motkdev.netlify.app",
     "http://localhost:3000",
     
 ]
