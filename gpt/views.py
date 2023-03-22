@@ -11,7 +11,7 @@ import os
 
 class gptChat (APIView):
 
-  def get(self,request):
+  def post(self,request):
 
     content = request.data['content']
     openai.api_key = os.getenv("OPENAI_API_KEY")
