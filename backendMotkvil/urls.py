@@ -28,4 +28,5 @@ urlpatterns = [
     path('api/user/',include('user.urls')),
     path('api/mypet/',include('mypet.urls')),
     path('api/service/',include('service.urls')),
+    path('chat/', include('gpt.urls')),
 ]
