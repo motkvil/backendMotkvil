@@ -208,6 +208,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://motkdev.netlify.app",
     "http://localhost:3000",
     "http://localhost:5173",
+    "https://motkgpt.netlify.app",
     
 ]
 
